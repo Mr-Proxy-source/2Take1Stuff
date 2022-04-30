@@ -1,3 +1,6 @@
+### Disclaimer
+ I only made the UIs, credits for the fonts and headers go to their respective creator!
+
 # Previews
 
 ## Absolute
