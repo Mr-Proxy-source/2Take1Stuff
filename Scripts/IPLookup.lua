@@ -1,9 +1,14 @@
+if IPLookup_lua then
+    menu.notify('IPLookup.lua already loaded.')
+    return
+end
+
 local function getIP(ID)
     if player.is_player_valid(ID) then
         local playerip = player.get_player_ip(ID)
         return string.format('%i.%i.%i.%i', (playerip >> 24) & 0xff, ((playerip >> 16) & 0xff), ((playerip >> 8) & 0xff), playerip & 0xff)
     else
-        return -1
+        return '0.0.0.0'
     end
 end
 
@@ -50,3 +55,5 @@ local iplookup = menu.add_player_feature("IP Lookup", "action_value_str", 0, fun
     end
 end)
 iplookup:set_str_data({'Notify', 'Copy to Clipboard', 'Send in Chat'})
+
+IPLookup_lua = true
